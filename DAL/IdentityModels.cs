@@ -22,7 +22,7 @@ namespace GameStore.DAL
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base(@"Data Source=(local)\SQLEXPRESS; Initial Catalog=JOKR_Store; Integrated Security=true", throwIfV1Schema: false)
         {
         }
 
