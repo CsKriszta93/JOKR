@@ -16,9 +16,9 @@ namespace JOKR.Service
     public class GameService : IGameService
     {
         private readonly ApplicationDbContext dbContext;
-        private readonly GameMappingProfile mapper;
+        private readonly IMapper mapper;
 
-        public GameService(ApplicationDbContext dbContext, GameMappingProfile mapper)
+        public GameService(ApplicationDbContext dbContext, IMapper mapper)
         {
             this.dbContext = dbContext;
             this.mapper = mapper;
@@ -28,7 +28,7 @@ namespace JOKR.Service
         {
             var games = await dbContext
                 .Games
-                .ProjectTo<GameDto>()
+                .ProjectTo<GameDto>(mapper.ConfigurationProvider)
                 .ToListAsync();
 
             return games;

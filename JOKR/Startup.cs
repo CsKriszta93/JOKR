@@ -12,6 +12,11 @@ using Microsoft.EntityFrameworkCore;
 using JOKR.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using AutoMapper;
+using JOKR.ServiceInterfaces;
+using JOKR.Service;
+using BLL.Mapper;
+using JOKR.Mappers;
 
 namespace JOKR
 {
@@ -37,12 +42,22 @@ namespace JOKR
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped<IGameService, GameService>();
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
+            var mappingConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new GameMappingProfile());
+                mc.AddProfile(new GameViewMappingProfile());
+            });
+
+            IMapper mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddScoped<DbContext>(sp => sp.GetService<ApplicationDbContext>());
+            //services.AddScoped<DbContext>(sp => sp.GetService<ApplicationDbContext>());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

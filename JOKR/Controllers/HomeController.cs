@@ -25,11 +25,12 @@ namespace JOKR.Controllers
             this.mapper = mapper;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            ViewData["Users"] = mapper.Map<IEnumerable<BLL.Dtos.GameDto>, IEnumerable<GameView>>(source: gameService.GetGames().Result);
+            var gameDtos = await gameService.GetGames();     
+            var games = gameDtos.Select(x => Mapper.Map<GameView>(x));
 
-            return View();
+            return View(games);
         }
 
         /*public IActionResult About()

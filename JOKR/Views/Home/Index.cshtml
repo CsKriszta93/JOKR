@@ -1,4 +1,6 @@
-﻿<!doctype html>
+﻿@model IEnumerable<GameView>
+
+<!doctype html>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
@@ -63,11 +65,11 @@
                         <tr>
                             <th>Name</th>
                             <th>Release Date</th>
-                        </tr></thread>
+                        </tr></thead>
 
                     <tbody>
 
-                        @foreach (var game in ViewData["Users"] as IList<Model.Game>)
+                        @foreach (var game in Model)
         {
             <tr>
                 <td>@game.GameName</td>
