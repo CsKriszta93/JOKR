@@ -1,15 +1,17 @@
-﻿using AutoMapper.QueryableExtensions;
+﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using BLL.Dtos;
 using BLL.Mapper;
-using BLL.ServiceInterfaces;
-using GameStore.DAL;
+using JOKR.ServiceInterfaces;
 using Model;
 using System.Collections.Generic;
-using System.Data.Entity;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
+using JOKR.Data;
+using Microsoft.EntityFrameworkCore;
 
-namespace BLL.Service
+namespace JOKR.Service
 {
     public class GameService : IGameService
     {

@@ -5,24 +5,29 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using JOKR.Models;
-using GameStore.DAL;
-using BLL.Service;
+using JOKR.Data;
+using JOKR.Service;
+using JOKR.ServiceInterfaces;
 using BLL.Mapper;
+using AutoMapper;
+using AutoMapper.QueryableExtensions;
 
 namespace JOKR.Controllers
 {
     public class HomeController : Controller
     {
-        GameService gameservice;
+        private readonly IGameService gameService;
+        private readonly IMapper mapper;
 
-        public HomeController()
+        public HomeController(IGameService gameService, IMapper mapper)
         {
-            gameservice = new GameService(new ApplicationDbContext(), new GameMappingProfile());
+            this.gameService = gameService;
+            this.mapper = mapper;
         }
 
         public IActionResult Index()
         {
-            ViewData["Users"] = gameservice.GetGames();
+            ViewData["Users"] = mapper.Map<IEnumerable<BLL.Dtos.GameDto>, IEnumerable<GameView>>(source: gameService.GetGames().Result);
 
             return View();
         }

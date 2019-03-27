@@ -67,15 +67,15 @@
 
                     <tbody>
 
-                         @foreach (var game in ViewData["Users"] as IList<Model.Game>)
-                            {
-                                <tr>
-                                    <td>@game.GameName</td>
-                                    <td>@game.Release</td>
-                                    <td><a class="btn btn-primary" href="game.exe" role="button">Download</a></td>
+                        @foreach (var game in ViewData["Users"] as IList<Model.Game>)
+        {
+            <tr>
+                <td>@game.GameName</td>
+                <td>@game.Release</td>
+                <td><a class="btn btn-primary" href="game.exe" role="button">Download</a></td>
 
-                                </tr>
-                            }
+            </tr>
+        }
 
 
 

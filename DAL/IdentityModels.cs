@@ -19,7 +19,7 @@ namespace GameStore.DAL
         }
     }
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    /*public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
             : base(@"Data Source=(local)\SQLEXPRESS; Initial Catalog=JOKR_Store; Integrated Security=true", throwIfV1Schema: false)
@@ -33,5 +33,5 @@ namespace GameStore.DAL
         {
             return new ApplicationDbContext();
         }
-    }
+    }*/
 }
