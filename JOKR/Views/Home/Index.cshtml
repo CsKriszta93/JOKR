@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="Content/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="Content/custom_style.css">
+        <link rel="stylesheet" type="text/css" href="Content/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="~/css/site.css">
 
     <title>Game store</title>
 </head>
@@ -18,71 +18,33 @@
 
     <div class="container">
 
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            @*<a class="navbar-brand">
-                        <img src="logo.png" alt="Logo" style="width:100px;">
-                </a>*@
-
-            <ul class="navbar-nav">
-
-                <li class="nav-item">
-                    <a class="nav-link" href=@Url.Action("Index", "Home")>Main page</a>
-                </li>
-
-                @*<li class="nav-item">
-                    <a class="nav-link" href=@Url.Action("Gamelist", "Home")>Games</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href=@Url.Action("Forum", "Home")>Forum</a>
-                </li>*@
-
-
-            </ul>
-
-        </nav>
         <div class="row">
-            <div class="col-3">
-                <div class="Sub-menu">
-                    <div class="Menu-head">
-                        My account
-                    </div>
-                    <a href="#">Games</a></br>
-                    <a href="#">My topics</a></br>
-                    <a href="#">Messages</a></br>
-                    <a href="#">Settings</a></br>
-                    <a href="#">Log out</a></br>
-                </div>
-
-            </div>
-
             <div class="col-lg">
                 <h1>Game list</h1>
 
-                <table class="table table-striped">
+                <div class="flex-container">
+                    @foreach (var game in Model)
+                    {
+                        <div class="card">
+                            <div class="poster">
+                                <img src="Content/1_Far_Cry_pc.jpg">
+                            </div>
+                            <div class="details">
+                                <h2>@game.GameName<br><span>by Ubisoft</span></h2>
+                                <div class="tags">
+                                    <span class="adventure">Adventure</span>
+                                    <span class="first-person">First person</span>
+                                </div>
+                                <div class="info">
+                                    <p>@game.Description</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
 
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Release Date</th>
-                        </tr></thead>
+               
 
-                    <tbody>
-
-                        @foreach (var game in Model)
-        {
-            <tr>
-                <td>@game.GameName</td>
-                <td>@game.Release</td>
-                <td><a class="btn btn-primary" href="game.exe" role="button">Download</a></td>
-
-            </tr>
-        }
-
-
-
-                    </tbody>
-                </table>
 
             </div>
         </div>
@@ -90,9 +52,8 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="Scripts/bootstrap.min.js"></script>
-
-
+    @*<script src="Scripts/jquery-3.3.1.js"></script>
+        <script src="Scripts/bootstrap.js"></script>*@
 
 </body>
 </html>

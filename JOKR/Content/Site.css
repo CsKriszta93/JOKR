@@ -22,17 +22,3 @@ select,
 textarea {
     max-width: 280px;
 }
-
-.Sub-menu {
-	border: 1px solid black;
-	padding: 5px;
-	margin: 5px;
-	font-size: 20px;
-}
-
-.Menu-head {
-	color : white;
-	padding: 5px;
-	background: #6495F5;
-	font-size: 24px;
-}

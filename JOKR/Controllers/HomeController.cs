@@ -28,7 +28,7 @@ namespace JOKR.Controllers
         public async Task<IActionResult> Index()
         {
             var gameDtos = await gameService.GetGames();     
-            var games = gameDtos.Select(x => Mapper.Map<GameView>(x));
+            var games = gameDtos.Select(x => mapper.Map<GameView>(x));
 
             return View(games);
         }
