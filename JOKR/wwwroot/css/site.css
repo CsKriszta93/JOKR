@@ -68,16 +68,11 @@ body {
 
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 
-body {
-    margin: 10px;
-    padding: 10px;
-    font-family: 'Quicksand', serif;
-}
 
 .card {
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(0%, 0%);
     width: 300px;
     height: 450px;
     background: #000;
@@ -92,7 +87,7 @@ body {
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(0deg, #000 45%, transparent);
+        background: linear-gradient(0deg, #000 20%, transparent);
         transition: 0.5s;
         z-index: 1;
     }
