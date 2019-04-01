@@ -3,12 +3,11 @@ using AutoMapper.QueryableExtensions;
 using BLL.Dtos;
 using BLL.Mapper;
 using JOKR.ServiceInterfaces;
-using Model;
+using Entities;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
-using JOKR.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace JOKR.Service

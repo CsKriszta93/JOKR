@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Model
+namespace Entities.Model
 {
     public class Game
     {

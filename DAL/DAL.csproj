@@ -248,9 +248,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Model\Model.csproj">
+    <ProjectReference Include="..\Model\Entities.csproj">
       <Project>{d483c31f-fad0-4ab2-9499-c6ef2fa7ff88}</Project>
-      <Name>Model</Name>
+      <Name>Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

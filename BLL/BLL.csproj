@@ -259,9 +259,9 @@
       <Project>{ce24b410-6cbc-44b4-90a5-21705d997583}</Project>
       <Name>DAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Model\Model.csproj">
+    <ProjectReference Include="..\Model\Entities.csproj">
       <Project>{D483C31F-FAD0-4AB2-9499-C6EF2FA7FF88}</Project>
-      <Name>Model</Name>
+      <Name>Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
