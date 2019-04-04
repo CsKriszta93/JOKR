@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Entities.Model;
+using Entities.Models;
 
 namespace Entities
 {
@@ -16,6 +16,7 @@ namespace Entities
 
         public DbSet<User> StoreUsers { get; set; }
         public DbSet<Game> Games { get; set; }
+        public DbSet<Comment> Comments { get; set; }
 
         /*public static ApplicationDbContext Create(string connection)
         {

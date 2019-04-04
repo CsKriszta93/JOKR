@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using BLL.Dtos;
-using Entities.Model;
+using Entities.Models;
 
 namespace BLL.Mapper
 {

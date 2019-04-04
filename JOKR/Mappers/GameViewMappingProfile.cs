@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using JOKR.ViewModels;
-using Entities.Model;
+using JOKR.Models;
+using Entities.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

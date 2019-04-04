@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Entities.Model
+namespace Entities.Models
 {
     public class User
     {
@@ -12,6 +12,7 @@ namespace Entities.Model
         public DateTime Registration { get; set; }
         public string BankAccount { get; set; }
         public bool IsAdmin { get; set; }
+        public DateTime lastLogin { get; set; }
 
         /// <summary>
         /// idegen kulcs a Configuraton táblához

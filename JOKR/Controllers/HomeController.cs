@@ -29,8 +29,18 @@ namespace JOKR.Controllers
         {
             var gameDtos = await gameService.GetGames();     
             var games = gameDtos.Select(x => mapper.Map<GameView>(x));
+            
 
             return View(games);
+        }
+
+        public async Task<IActionResult> GameView(Guid id)
+        {
+            var gameDto = await gameService.GetGame(id);
+            var game = mapper.Map<GameView>(gameDto);
+            System.Diagnostics.Debug.WriteLine(game.GameName);
+  
+            return View(game);
         }
 
         /*public IActionResult About()

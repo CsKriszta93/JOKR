@@ -25,21 +25,23 @@
                 <div class="flex-container">
                     @foreach (var game in Model)
                     {
-                        <div class="card">
-                            <div class="poster">
-                                <img src="1_Far_Cry_pc.jpg">
-                            </div>
-                            <div class="details">
-                                <h2>@game.GameName<br><span>by Ubisoft</span></h2>
-                                <div class="tags">
-                                    <span class="adventure">Adventure</span>
-                                    <span class="first-person">First person</span>
+                        <a asp-controller="Home" asp-action="GameView" asp-route-id="@game.Id">
+                            <div class="card">
+                                <div class="poster">
+                                    <img src="1_Far_Cry_pc.jpg">
                                 </div>
-                                <div class="info">
-                                    <p>@game.Description</p>
+                                <div class="details">
+                                    <h2>@game.GameName<br><span>by Ubisoft</span></h2>
+                                    <div class="tags">
+                                        <span class="adventure">Adventure</span>
+                                        <span class="first-person">First person</span>
+                                    </div>
+                                    <div class="info">
+                                        <p>@game.Description</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     }
                 </div>
 

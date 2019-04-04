@@ -32,5 +32,12 @@ namespace JOKR.Service
 
             return games;
         }
+
+        public async Task<GameDto> GetGame(System.Guid id)
+        {
+            var game = await mapper.Map<Task<GameDto>>(dbContext.Games.FirstOrDefaultAsync(x => x.Id == id));
+            game.Comments = await dbContext.Comments.Where(x => x.GameId == game.Id).ToListAsync();
+            return game;
+        }
     }
 }
